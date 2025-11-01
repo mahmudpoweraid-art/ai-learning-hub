@@ -1,0 +1,14 @@
+# Netlify Build Settings
+[build]
+  command = "vite build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# This rule is essential for Single-Page Applications (SPAs).
+# It ensures that any direct visit to a sub-path of your site
+# still loads the main index.html file, allowing your app's
+# JavaScript to handle the routing.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
